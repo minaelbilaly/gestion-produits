@@ -27,22 +27,14 @@
 11. [Conclusion](#11-conclusion)
 
 ---
-
 # 1. Objectif du TP
 
 L'objectif de ce TP est de développer une application avec **Spring Boot** permettant de gérer des produits dans une base de données.
 
 Cette application permet de réaliser les principales opérations de gestion : ajouter, consulter, rechercher, modifier et supprimer des produits.
 
-Les objectifs de ce TP sont :
+À travers ce travail, j'ai appris à utiliser **Spring Data JPA** pour faciliter la communication entre l'application Java et la base de données, sans avoir à écrire manuellement les requêtes SQL.
 
-- Créer un projet Spring Boot avec les dépendances Spring Web, Spring Data JPA, H2 et Lombok.
-- Créer une entité JPA appelée `Product`.
-- Configurer la base de données dans le fichier `application.properties`.
-- Créer une interface `ProductRepository` basée sur Spring Data JPA.
-- Tester les différentes opérations CRUD.
-
-**Principe général :** Spring Data JPA facilite la communication avec la base de données en fournissant automatiquement les méthodes nécessaires pour manipuler les données.
 
 # 2. Outils et technologies utilisés
 
@@ -78,8 +70,6 @@ J'ai choisi les quatre dépendances nécessaires :
 Le fichier `pom.xml` contient les informations du projet et les dépendances nécessaires à son fonctionnement.
 
 Voici un extrait du fichier :
-
-```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -113,13 +103,16 @@ Voici un extrait du fichier :
         <optional>true</optional>
     </dependency>
 </dependencies>
-```
 
 **Explication :** Maven utilise ce fichier pour télécharger et gérer automatiquement les bibliothèques nécessaires au projet.
 
-![Figure 1 : Les dépendances utilisées dans le projet](images/01-pom-dependances.png)
+<img width="1413" height="1428" alt="pom-xml-extrait" src="https://github.com/user-attachments/assets/1ab0d605-1375-46db-8bc9-5787ae295a0a" />
 
-*Figure 1 : Les quatre dépendances du projet.*
+
+  Figure 1 : Les quatre dépendances du projet.
+
+
+
 
 ---
 
@@ -160,8 +153,7 @@ gestion-produits/
 | `pom.xml` | Contient les dépendances du projet. |
 
 **Explication :** Cette organisation permet de séparer les différentes responsabilités et de rendre le projet plus facile à comprendre et à maintenir.
-
-![Figure 2 : Structure du projet dans Visual Studio Code](images/02-arborescence.png)
+<img width="295" height="319" alt="image" src="https://github.com/user-attachments/assets/57262ab3-5c1e-4124-931b-00d157b92365" />
 
 *Figure 2 : Arborescence du projet dans Visual Studio Code.*
 
@@ -229,8 +221,8 @@ public class Product {
 | `@Builder` | Facilite la création des objets avec le modèle Builder. |
 
 **Explication :** Lombok m'évite d'écrire manuellement les getters, les setters et les constructeurs. Cela rend le code plus court et plus lisible.
+<img width="568" height="568" alt="Capture d&#39;écran 2026-11-08 232209" src="https://github.com/user-attachments/assets/5226f290-2fe6-4e4c-8deb-b9894dee7006" />
 
-![Figure 3 : Création de l'entité JPA Product](images/03-entite-product.png)
 
 *Figure 3 : Classe Product avec les annotations JPA et Lombok.*
 
@@ -281,7 +273,8 @@ server.port=8080
 
 **Explication importante :** H2 fonctionne ici en mémoire. Les données sont conservées pendant l'exécution de l'application, mais elles disparaissent lorsque celle-ci s'arrête.
 
-![Figure 4 : Configuration de la persistance avec H2](images/04-application-properties.png)
+<img width="483" height="387" alt="image" src="https://github.com/user-attachments/assets/08e5ba37-0710-43a3-8c15-5a8b345059a3" />
+
 
 *Figure 4 : Fichier application.properties.*
 
@@ -341,7 +334,8 @@ J'ai également ajouté deux méthodes de recherche :
 
 **Explication :** Le principal avantage de Spring Data JPA est qu'il génère automatiquement les requêtes nécessaires à partir du nom des méthodes. Je n'ai donc pas besoin d'écrire leur implémentation.
 
-![Figure 5 : Création du repository avec Spring Data JPA](images/05-product-repository.png)
+<img width="748" height="389" alt="image" src="https://github.com/user-attachments/assets/29e7a23a-d67e-4409-8c02-74ea90381bb1" />
+
 
 *Figure 5 : Interface ProductRepository.*
 
