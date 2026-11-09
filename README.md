@@ -5,7 +5,7 @@
 | Informations | Détails |
 |---|---|
 | **Module** | Java avancé |
-| **Réalisé par** | [Ton prénom et nom] |
+| **Réalisé par** | Mina ELBILALY |
 | **Date** | Novembre 2026 |
 | **Environnement** | Visual Studio Code, JDK 17, Maven, Git / GitHub |
 | **Technologies** | Spring Boot 3.5, Spring Data JPA, Hibernate, H2, Lombok |
@@ -473,7 +473,8 @@ Cette commande permet de compiler et de démarrer l'application Spring Boot.
 
 Lorsque le démarrage réussit, le message `Started GestionProduitsApplication` apparaît dans le terminal.
 
-![Figure 6 : Exécution de l'application Spring Boot](images/06-lancement.png)
+<img width="896" height="664" alt="image" src="https://github.com/user-attachments/assets/6cfb3e94-0f34-489d-b12b-ba5b22ffe1e9" />
+
 
 *Figure 6 : Démarrage de l'application Spring Boot.*
 
@@ -481,15 +482,16 @@ Lorsque le démarrage réussit, le message `Started GestionProduitsApplication` 
 
 Pour ajouter des produits, j'utilise la méthode `save()`.
 
-Dans mon exemple, j'ajoute quatre produits : Ordinateur, Imprimante, Souris et Smartphone.
+Dans mon exemple, j'ajoute quatre produits : Ordinateur,  Souris et Smartphone.
 
 L'identifiant est généré automatiquement par la base de données.
 
-**Résultat :** Les quatre produits sont enregistrés dans la base H2.
+**Résultat :** Les trois produits sont enregistrés dans la base H2.
 
-![Figure 7 : Ajout de quatre produits dans la base de données](images/07-ajout.png)
+<img width="688" height="452" alt="image" src="https://github.com/user-attachments/assets/13b14683-03b4-4d51-afc6-d4975ea19b21" />
 
-*Figure 7 : Insertion de quatre produits.*
+
+*Figure 7 : Insertion de 3 produits.*
 
 ### 8.5. Consultation de tous les produits (Read)
 
@@ -499,7 +501,8 @@ Cette méthode récupère la liste complète des produits enregistrés dans la b
 
 **Résultat :** Les quatre produits sont affichés dans le terminal.
 
-![Figure 8 : Affichage de la liste des produits](images/08-tous-les-produits.png)
+<img width="720" height="111" alt="image" src="https://github.com/user-attachments/assets/115e4b5c-6706-4300-b9d4-3c1a701667f1" />
+
 
 *Figure 8 : Consultation de tous les produits.*
 
@@ -513,7 +516,8 @@ Dans mon exemple, je recherche le produit ayant l'identifiant 1.
 
 **Résultat :** Les informations du produit Ordinateur sont affichées : identifiant, nom, prix et quantité.
 
-![Figure 9 : Consultation d'un produit par son identifiant](images/09-un-produit.png)
+<img width="856" height="101" alt="image" src="https://github.com/user-attachments/assets/8ec0a317-0b22-4aa2-ab29-c9d3274f33f2" />
+
 
 *Figure 9 : Consultation du produit n° 1.*
 
@@ -543,7 +547,8 @@ Cette méthode retourne les produits dont le prix est supérieur à 1000.
 
 **Explication :** Ces deux méthodes montrent que Spring Data JPA peut créer des requêtes automatiquement à partir du nom des méthodes.
 
-![Figure 10 : Recherche des produits par nom et par prix](images/10-recherche.png)
+<img width="887" height="179" alt="image" src="https://github.com/user-attachments/assets/4f4d4790-43d6-4e04-853d-a14e197803d5" />
+
 
 *Figure 10 : Résultats des deux recherches.*
 
@@ -562,7 +567,7 @@ Dans mon exemple :
 
 **Résultat :** Le produit ayant l'identifiant 1 est mis à jour dans la base de données.
 
-![Figure 11 : Modification des informations du produit](images/11-mise-a-jour.png)
+<img width="822" height="107" alt="image" src="https://github.com/user-attachments/assets/4d82921a-eabb-412e-b611-93f35b3933ea" />
 
 *Figure 11 : Produit n° 1 après modification.*
 
@@ -576,7 +581,8 @@ Après la suppression, j'utilise `findAll()` pour afficher les produits restants
 
 **Résultat :** Le produit Imprimante est supprimé de la base de données.
 
-![Figure 12 : Résultat de la suppression du produit](images/12-suppression.png)
+<img width="934" height="250" alt="image" src="https://github.com/user-attachments/assets/cb82cf29-8371-465f-b690-c2b6d1dae3d8" />
+
 
 *Figure 12 : Liste des produits après suppression.*
 
@@ -600,7 +606,7 @@ En plus des tests effectués dans le terminal, je peux consulter directement les
 
 Pour cela, j'ouvre un navigateur et j'accède à l'adresse suivante :
 
-`http://localhost:8080/h2-console`
+`http://localhost:8081/h2-console`
 
 Je renseigne les informations suivantes :
 
@@ -620,7 +626,8 @@ Cette requête permet d'afficher tous les produits enregistrés dans la table PR
 
 **Explication :** La console H2 me permet de vérifier directement que les opérations réalisées dans mon application ont bien modifié les données de la base.
 
-![Figure 13 : Vérification des données dans la base H2](images/13-console-h2.png)
+<img width="777" height="402" alt="image" src="https://github.com/user-attachments/assets/1830d139-da83-4b09-8aac-5968a86f3e14" />
+
 
 *Figure 13 : Contenu de la table PRODUCT dans la console H2.*
 
